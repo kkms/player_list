@@ -1,8 +1,11 @@
 """Player Model class """
 
 from dataclasses import field
+from typing import ClassVar, Type
 
 from marshmallow_dataclass import dataclass
+from marshmallow import Schema
+
 
 
 first_name_dict = {"data_key":"firstName","attribute":"first_name"}
@@ -19,3 +22,4 @@ class Player:
     height: int
     age: int
     dob: str = field(metadata=dob_dict)
+    Schema: ClassVar[Type[Schema]] = Schema # type: ignore
