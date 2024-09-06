@@ -1,9 +1,9 @@
 """ Main Implementation to Call the Class """
 
 import requests
+from marshmallow import EXCLUDE
 from model.league import League
 from model.player import Player
-from marshmallow import EXCLUDE
 
 
 def get_league_list( url, limit=10 , active="true"):
