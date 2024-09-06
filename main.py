@@ -14,6 +14,7 @@ def get_league_list( url, limit=10 , active="true"):
     if response.status_code == 200:
         league_model = League.Schema().load(response.json())
         return league_model
+    return League(0,0,0,0,[])
 
 def get_player_details(url):
     """Get the Player Details """
@@ -22,6 +23,7 @@ def get_player_details(url):
     if response.status_code == 200:
         player_details = Player.Schema().load(response.json(),unknown=EXCLUDE)
         return player_details
+    return None
 
 if __name__ == '__main__':
     URI = "https://sports.core.api.espn.com/v2/sports/football/leagues/nfl/athletes"
