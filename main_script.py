@@ -29,6 +29,6 @@ if __name__ == '__main__':
     players = [get_player_details(item["$ref"]) for item in league_data['items'] if league_data]
     # Print the first player name and modify it
     player = players[0]
-    print(f"Change the player first name :{player["firstName"]}")
+    print(f"Change the player first name :{player.get('firstName')}")
     player["firstName"] = "Santhosh"
-    print(f"Changed the player first name :{ player["firstName"] }")
+    print(f"Changed the player first name :{ player.get('firstName')}")
